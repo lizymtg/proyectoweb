@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <!-- Linkear el CSS del chatbot -->
+    <link rel="stylesheet" type="text/css" href="chatbot.css">
+    <title>BIG DATA</title>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <header id="big-data-y-analisis">
+    <div id="fondo">
+        <h1 align="center">BIG DATA Y SU ANALISIS</h1> 
+         <div id="header">
+            <ul class="nav">
+                <li><a href="">Inicio</a>
+                    <ul>
+                        <li><a href="index.html#big-data-y-analisis">Introduccion</a></li>
+                        <li><a href="Historia.html">Historia</a></li>
+                        <li><a href="AnalisisDatos1.html">Analisis Datos</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Informacion</a>
+                    <ul>
+                        <li><a href="BigDataAnalist1.html">Sobre el Data analist</a></li>
+                        <li><a href="entrega3.html">Avances Actuales</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Preguntas</a>
+                    <ul>
+                        <li><a href="PreguntasFrecuentes.html">Frecuentes</a></li>
+                        <li><a href="cuestionario.html">Cuestionario</a></li>
+                        <li><a href="comentarios.html">Comentarios</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Galeria Big</a>
+                    <ul>
+                        <li><a href="Videos.html">Videos</a></li>
+                        <li><a href="GaleriaMemes.html">Memes</a></li>
+                        <li><a href="RedesSociales.html">Redes sociales</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <br><br>
+    </div>
+    </header>
+    <!-- Contenido de BIG DATA Y ANÁLISIS DE DATOS -->
+    <section >
+        <br><br>
+            <h2>BIG DATA Y ANALISIS DE DATOS</h2>
+        <div id="contenido">
+            <h3>Introduccion</h3>
+            <p>En la era de la información, donde cada clic, cada interacción y cada transacción generan datos, la Big Data y el análisis de datos surgen como herramientas fundamentales para descifrar el significado oculto en estos vastos conjuntos de datos. Esta capacidad para entender y predecir tendencias a partir de los datos no solo está transformando negocios y economías, sino también la manera en que abordamos desafíos globales como el cambio climático y las pandemias.</p>
+        </div>
+        <div id="contenido">
+            <h2>Lo Más Relevante de la Big Data y el Análisis de Datos</h2>
+            <h3>Innovación en Tiempo Real:</h3> 
+            <p>La capacidad para procesar y analizar datos en tiempo real permite a las empresas adaptarse rápidamente a las tendencias del mercado y las necesidades de los clientes.</p>
+            <h3>Democratización de los Datos:</h3>
+            <p>Herramientas y plataformas más accesibles están haciendo que el análisis de datos no sea exclusivo de los científicos de datos, permitiendo a usuarios de negocios tomar decisiones informadas.</p>
+        </div>
+        <div id="contenido">
+        <h2>Cómo Funciona</h2>
+            <p>La Big Data funciona a través de tecnologías especializadas diseñadas para manejar enormes volúmenes de datos. Estas tecnologías incluyen sistemas de bases de datos NoSQL, plataformas como Apache Hadoop y Apache Spark, y soluciones de almacenamiento en la nube, cada una jugando un papel crítico en el almacenamiento, procesamiento y análisis de datos a gran escala.</p>
+        </div>
+        <div id="contenido">
+            <h2>Desafíos</h2>
+                <h3>Integración de Datos:</h3> 
+                <p>Fusionar datos de diversas fuentes y formatos en un conjunto coherente para análisis.</p>
+                <h3>Talento Especializado:</h3>
+                <p> La creciente demanda de profesionales con habilidades en manejo y análisis de Big Data.</p>
+        </div>
+        <div id="contenido">
+            <h2>Relación con el Cliente</h2>
+            <p>La Big Data permite a las empresas obtener una comprensión profunda de los comportamientos y preferencias de los clientes, lo que resulta en mejoras en el servicio al cliente, marketing personalizado y desarrollo de productos.</p>
+        </div>
+        <div id="contenido">
+            <h2>Relación con el Programador</h2>
+            <p>Para los programadores, la Big Data ofrece la oportunidad de trabajar en proyectos que manejan datos a una escala sin precedentes, desafiando y mejorando sus habilidades en áreas como análisis de datos, machine learning y desarrollo de infraestructura de datos.</p>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Angel de Jesus Mora (183475) & Lizeth Infante Martinez (184261)</p>
+    </footer>
+        <!-- HTML del Chatbot -->
+        <button id="chatbotToggle" class="chatbot-button">Chat</button>
+        <div id="chatbotContainer" class="chatbot-container hidden">
+            <div id="chatbot">
+                <div id="chatbotLogs" class="chatbot-logs">
+                    <div class="chatbot-chat bot-message">¡Hola! Soy tu asistente de Big Data y Análisis de Datos. ¿Cómo puedo ayudarte hoy?</div>
+                </div>
+                <div class="chatbot-input-area">
+                    <input type="text" id="chatbotInput" placeholder="Escribe tu pregunta aquí...">
+                    <button onclick="getChatbotResponse()">Enviar</button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Linkear el JavaScript del chatbot justo antes de cerrar el body para asegurar que el DOM está completamente cargado -->
+        <script src="chatbot.js"></script>
+</body>
+</html>

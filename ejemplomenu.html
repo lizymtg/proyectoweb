@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Menú Desplegable</title>
+    <style type="text/css">
+        body {
+            background-color: purple;
+        }
+        #header {
+            display: flex;
+            align-self: center;
+            margin: auto;
+            width: 80%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav > li {
+            float: left;
+        }
+
+        .nav li a {
+            background-color: rgba(255, 255, 255, 0.5);
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 12px;
+            margin: 0px 5px;
+            display: block;
+            width: 120px; 
+            text-align: center;
+        }
+
+        .nav li a:hover {
+            background-color: #E6C5FF;
+        }
+
+        .nav li ul {
+            display: none;
+            position: absolute;
+            min-width: 140px;
+            width: 140px;
+            margin-top: 5px; 
+        }
+
+        .nav li:hover > ul {
+            display: block;
+        }
+
+        .nav li ul li {
+            position: relative;
+        }
+
+        .nav li ul li ul {
+            left: 140px;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <ul class="nav">
+            <li><a href="">Inicio</a>
+                <ul>
+                    <li><a href="index.html#big-data-y-analisis">Infroduccion</a></li>
+                    <li><a href="index.html#big-data">Historia Big Data</a></li>
+                    <li><a href="AnalisisDatos1.html">Analisis de Datos</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Informacion</a>
+                <ul>
+                    <li><a href="BigDataAnalist1.html">Sobre el Data analist</a></li>
+                    <li><a href="entrega3.html">Avances Actuale</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Preguntas</a>
+                <ul>
+                    <li><a href="PreguntasFrecuentes.html">Preguntas frecuentes</a></li>
+                    <li><a href="#####">Cuestionario Big data</a></li>
+                    <li><a href="">Comentarios a desarrolladores</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Galeria Big</a>
+                <ul>
+                    <li><a href="Videos.html">Videos</a></li>
+                    <li><a href="GaleriaMemes.html">Memes</a></li>
+                    <li><a href="RedesSociales.html">Redes sociales</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!--Codigo viejo-->
+
+</body>
+</html>
+

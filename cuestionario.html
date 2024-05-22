@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" href="icon.png">
+	<link rel="stylesheet" type="text/css" href="Estilos.css">
+	<title>BIG DATA</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="https://fonts.googleapis.com/css?family=Charmonman" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+	<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="jquery-ui-1.8.17.custom.min.js"></script>
+	<script type="text/javascript" src="jspdf.js"></script>
+	<script type="text/javascript" src="jspdf.plugin.addimage.js"></script>
+	<script type="text/javascript" src="jspdf.plugin.standard_fonts_metrics.js"></script>
+	<script type="text/javascript" src="jspdf.plugin.split_text_to_size.js"></script>
+	<script type="text/javascript" src="jspdf.plugin.from_html.js"></script>	
+</head>
+<script>
+var total;
+function califica()
+    {
+		var total = 0;
+			// Evalúa cada pregunta
+			for (var x = 1; x <= 10; x++) {
+				var res = 0;
+				var nom = "r" + x;
+				var resul = document.getElementsByName(nom);
+				for (var i = 0; i < resul.length; i++) {
+					if (resul[i].checked == true)
+						res = parseInt(resul[i].value);
+				}
+				total += res;
+			}
+			document.getElementById("total").innerHTML = "Puntos obtenidos: " + total + " Puntos";
+		
+			// Revisa el rango del total para asignar un comentario
+			if (total >= 40) {
+				document.getElementById("comentario").innerHTML = "EXCELENTE!!!";
+			} else if (total >= 25 && total < 40) {
+				document.getElementById("comentario").innerHTML = "Regular!!";
+			} else if (total >= 25 && total < 5) {
+				document.getElementById("comentario").innerHTML = "Estudia un poco más";
+			} else if (total==0){
+				document.getElementById("comentario").innerHTML = "Sigue intentando!";
+			}
+    }
+
+ 
+function generar(){
+
+//Crear un objeto o instancia jsPDF
+var doc = new jsPDF();
+
+//Definir el tamaño de la letra
+			doc.setFontSize(30);
+			// Color del texto
+			doc.setTextColor(135, 0, 187);
+			doc.text(30, 20, "PREGUNTAS DE LA BIG DATA");
+			doc.setTextColor(23, 23, 108); // Color en formato RGB
+			doc.setFontSize(25);
+			doc.text(50, 35, "posibles resultados del test"); // Ubicación, Texto
+			doc.setTextColor(32, 2, 67);
+			doc.setFontSize(10);
+			doc.text(20, 50, "Más de 40 puntos: Muy bien. Todas o casi todas tus respuestas son correctas.");
+			doc.text(20, 70, "De 40 a 25 puntos: Regular. Obtuviste de 5 a 8 respuestas correctas.");
+			doc.text(20, 90, "De 25 a 5 puntos: Estudia un poco más. Obtuviste de 5 a 1 respuestas correctas.");
+			doc.text(20, 110, "0 puntos: ¡Sigue intentando!");
+
+//doc.addImage(imgData, 'JPEG', 10, 40, 180, 180);
+
+var string = doc.output('datauristring');
+
+$('iframe').attr('src', string);
+
+}
+</script>
+
+<body>
+	<header id="big-data-y-analisis">
+    <div id="fondo">
+        <h1 align="center">Cuestionario</h1>
+         <div id="header">
+            <ul class="nav">
+                <li><a href="#">Inicio</a>
+                    <ul>
+                        <li><a href="index.html#big-data-y-analisis">Introduccion</a></li>
+                        <li><a href="Historia.html">Historia</a></li>
+                       <li><a href="AnalisisDatos1.html">Analisis Datos</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Informacion</a>
+                    <ul>
+                        <li><a href="BigDataAnalist1.html">Sobre el Data analist</a></li>
+                        <li><a href="entrega3.html">Avances Actuales</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Preguntas</a>
+                    <ul>
+                        <li><a href="PreguntasFrecuentes.html">Frecuentes</a></li>
+                        <li><a href="cuestionario.html">Cuestionario</a></li>
+                        <li><a href="comentarios.html">Comentarios</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Galeria Big</a>
+                    <ul>
+                        <li><a href="Videos.html">Videos</a></li>
+                        <li><a href="GaleriaMemes.html">Memes</a></li>
+                        <li><a href="RedesSociales.html">Redes sociales</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <br><br>
+    </div>
+    </header>
+    <section >
+        <br><br>
+		<h2>CUESTIONARIO SOBRE LA BIG DATA</h2>
+		<h3>Que tanto sabes sobre el tema?</h3><br><br>
+		<form>
+		<ul>
+			<div id="contenido"><br>
+			<li><b>1. ¿Qué es Big Data y por qué es relevante en la actualidad?</b></li>
+			<input type="radio" name="r1" id="r1" value="0"/>a) Big Data se refiere a datos de tamaño medio y su relevancia radica en su facilidad de procesamiento.<br/>
+			<input type="radio" name="r1" id="r1" value="5"/>b) Big Data se refiere a enormes conjuntos de datos que no pueden ser procesados con métodos convencionales, y es relevante porque revela patrones ocultos.<br/>
+			<input type="radio" name="r1" id="r1" value="0"/>c) Big Data es simplemente un término de moda sin relevancia práctica.<br/><br>
+			</div>
+			<div id="contenido"><br>
+			<li><b>2. ¿Cuál es uno de los principales desafíos del Big Data además de los problemas técnicos?</b></li>
+			<input type="radio" name="r2" id="r2" value="0"/>a) Falta de herramientas de almacenamiento.<br/>
+			<input type="radio" name="r2" id="r2" value="5"/>b) Desafíos legales y éticos relacionados con la privacidad y seguridad de los datos personales.<br/>
+			<input type="radio" name="r2" id="r2" value="0"/>c) Escasez de datos disponibles para su análisis.<br/><br>
+			</div>
+			<div id="contenido"><br>
+			<li><b>3. ¿Cómo se relaciona el Big Data con la mejora de la experiencia del cliente?</b></li>
+			<input type="radio" name="r3" id="r3" value="0"/>a) El Big Data no tiene relación con la experiencia del cliente.<br/>
+			<input type="radio" name="r3" id="r3" value="5"/>b) Ayuda a entender las preferencias y comportamientos del cliente para ofrecer productos y servicios más personalizados.<br/>
+			<input type="radio" name="r3" id="r3" value="0"/>c) Solo es relevante para la optimización de procesos internos de la empresa.<br/><br>
+			</div>
+			<div id="contenido"><br>
+			<li><b>4. ¿Qué papel juegan los programadores en el ecosistema de Big Data?</b></li>
+			<input type="radio" name="r4" id="r4" value="0"/>a) Los programadores no son necesarios para el Big Data.<br/>
+			<input type="radio" name="r4" id="r4" value="5"/>b) Desarrollan las aplicaciones y algoritmos que permiten el procesamiento y análisis eficiente de los datos.<br/>
+			<input type="radio" name="r4" id="r4" value="0"/>c) Solo se encargan del almacenamiento de los datos.<br/><br/>
+			</div>
+			<div id="contenido"><br>
+			<li><b>5. ¿Qué es el análisis de datos y qué disciplinas combina?</b></li>
+			<input type="radio" name="r5" id="r5" value="0"/>a) El análisis de datos es exclusivamente el proceso de examinar conjuntos de datos sin combinar ninguna disciplina.<br/>
+			<input type="radio" name="r5" id="r5" value="5"/>b) Es el proceso de examinar conjuntos de datos para descubrir patrones y extraer conclusiones significativas, combinando elementos de estadística, matemáticas y programación informática.<br/>
+			<input type="radio" name="r5" id="r5" value="0"/>c) Se refiere únicamente al procesamiento de datos para su almacenamiento.<br/><br>
+			</div>
+			<div id="contenido"><br>
+			<li><b>6. ¿Cuál es la relación entre la programación y el análisis de datos?</b></li>
+			<input type="radio" name="r6" id="r6" value="0"/>a) No hay relación entre programación y análisis de datos.<br/>
+			<input type="radio" name="r6" id="r6" value="5"/>b) La programación es crucial para automatizar el tratamiento de datos y facilitar análisis complejos<br/>
+			<input type="radio" name="r6" id="r6" value="0"/>c) La programación solo se utiliza para el almacenamiento de datos.<br/><br>
+			</div>
+			<div id="contenido"><br>
+			<li><b>7. ¿Cómo puede ayudar el análisis de datos en el ámbito empresarial?</b></li>
+			<input type="radio" name="r7" id="r7" value="0"/>a) No tiene impacto en el ámbito empresarial.<br/>
+			<input type="radio" name="r7" id="r7" value="5"/>b) Ayuda a las organizaciones a tomar decisiones más informadas, desde la optimización de operaciones hasta el diseño de estrategias de marketing.<br/>
+			<input type="radio" name="r7" id="r7" value="0"/>c) Solo es útil para la gestión de recursos humanos.<br/><br/>
+			</div>
+			<div id="contenido"><br>
+			<li><b>8. Menciona una herramienta ampliamente utilizada en el análisis de datos:</b></li>
+			<input type="radio" name="r8" id="r8" value="5"/>a) SAS.<br/>
+			<input type="radio" name="r8" id="r8" value="0"/>b) Instagram<br/>
+			<input type="radio" name="r8" id="r8" value="0"/>c) WhatsApp<br/><br/>
+			</div>
+			<div id="contenido"><br>
+			<li><b>9. ¿Qué tipos de análisis se pueden realizar dentro del análisis de datos?</b></li>
+			<input type="radio" name="r9" id="r9" value="0"/>a) Solo análisis transaccional.<br/>
+			<input type="radio" name="r9" id="r9" value="5"/>b) Análisis de sentimiento en redes sociales, modelos de predicción de churn en clientes, optimización de rutas logísticas, entre otros.<br/>
+			<input type="radio" name="r9" id="r9" value="0"/>c) Análisis exclusivamente financiero.<br/><br/>
+			</div>
+			<div id="contenido"><br>
+			<li><b>10. ¿Cuál es la función principal de un Big Data Analyst en una empresa?</b></li>
+			<input type="radio" name="r10" id="r10" value="0"/>a) Solo manejan datos sin tomar decisiones.<br/>
+			<input type="radio" name="r10" id="r10" value="5"/>b) Creación de modelos predictivos, análisis estadísticos y visualización de datos para comunicar hallazgos.<br/>
+			<input type="radio" name="r10" id="r10" value="0"/>c) Solo se encargan de almacenar los datos.<br/>
+			</div>
+	
+		</ul>
+	</form>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<input id="button" type="button" value="Calificar" onclick="califica()">
+<br><br>
+<p></p>
+<p id="total">   </p>
+<p id="comentario">   </p>
+<input id="button" type="button" onclick="generar()" value="Ver resultados"/> <br/><br/> <br/>
+<iframe  frameborder="0" width="800" height="500"></iframe>
+</div>
+</body>
+</html>
